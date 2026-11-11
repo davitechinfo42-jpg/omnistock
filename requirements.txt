@@ -1,0 +1,5 @@
+streamlit
+sqlalchemy
+Authlib
+google-generativeai
+bcrypt
