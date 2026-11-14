@@ -1,3 +1,5 @@
+# Operações CRUD parametrizadas para gestão segura do inventário residencial
+
 import sqlite3
 from datetime import datetime
 
