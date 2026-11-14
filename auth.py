@@ -1,3 +1,5 @@
+# Módulo de autenticação de usuários e criptografia de senhas via bcrypt
+
 import sqlite3
 import bcrypt
 import re
