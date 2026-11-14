@@ -1,3 +1,5 @@
+# Módulo responsável pelas regras preditivas de validade e estoque mínimo
+
 import crud_estoque
 from datetime import datetime
 
