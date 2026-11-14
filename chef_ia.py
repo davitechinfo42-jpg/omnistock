@@ -2,11 +2,22 @@ import os
 import streamlit as st
 import google.generativeai as genai
 
-CHAVE_API = os.getenv("GEMINI_API_KEY") or st.secrets.get("GEMINI_API_KEY", "")
+def buscar_chave():
+    """Tenta buscar a chave de todas as formas possíveis para evitar falhas."""
+    try:
+        if "GEMINI_API_KEY" in st.secrets:
+            return st.secrets["GEMINI_API_KEY"]
+        if "gemini_api_key" in st.secrets:
+            return st.secrets["gemini_api_key"]
+    except Exception:
+        pass
+    
+    return os.getenv("GEMINI_API_KEY", "")
+
+CHAVE_API = buscar_chave()
 
 if CHAVE_API:
     genai.configure(api_key=CHAVE_API)
-
 CATEGORIAS_NAO_ALIMENTOS = [
     "higiene", 
     "limpeza", 
